@@ -1,0 +1,43 @@
+body {
+  text-align: left;
+}
+
+#searchBar {
+	text-align: center;
+	position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+	text-align: left;
+}
+
+.centreName  {
+	color: blue;
+}
+
+.centreName:hover {
+	text-decoration: underline;
+}
+
+.centreInfoList {
+	list-style: none;
+}
+
+.targetCentreName {
+	text-align: center;
+	font-size: 30px;
+}
+
+.targetCentreInfoList {
+	text-align: center;
+	list-style: none;
+}
+
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
