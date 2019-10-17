@@ -12,6 +12,7 @@ body {
 
 .container {
 	text-align: left;
+	margin:3% 0% 0% 3%;
 }
 
 .centreName  {
@@ -24,20 +25,31 @@ body {
 
 .centreInfoList {
 	list-style: none;
+	padding: 0px;
 }
 
 .targetCentreName {
 	text-align: center;
 	font-size: 30px;
+	font-weight: 700;
 }
 
 .targetCentreInfoList {
 	text-align: center;
 	list-style: none;
+	color: blue;
 }
 
 .flex {
+	padding: 10px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+
+#map {
+        height: 600px;
+        width: 100%;
+        margin:auto;
+        margin-top: 20px;
+      }

@@ -1,4 +1,5 @@
 $(() => {
+
 // Step 1: Define global variables to contain different data search results
     let centreInfo = [];
     let centreFee = [];
@@ -37,11 +38,13 @@ $(() => {
       resource_id: '8dac5d87-1f95-4701-9881-8d03b2af279d', // the resource id
       limit: 200000, // set the search record limit
     };
+
     //obtain data on school fees of centres
     const data2 = {
       resource_id: '5480fe65-877c-4502-8ff9-4eb8dff125da', // the resource id
       limit: 200000, // set the search record limit
     };
+
     //obtain data on licenses of centres
     const data3 = {
       resource_id: 'c1bd6081-8e59-4209-9f61-f22eb5d7ea78', // the resource id
@@ -97,7 +100,7 @@ $(() => {
         console.log(selectedSchools);
 
 //step 4: clear page and show search results
-        $('#searchBar').empty(); //clear page
+        $('#searchBar').remove(); //clear page
         $('.container').empty(); //clear page
 
         for (let i = 0; i < selectedSchools.length; i++) {
@@ -124,7 +127,8 @@ $(() => {
         $('.centreName').on('click', (event)=> {
             targetCentreName = $(event.currentTarget).text().toLowerCase();
             console.log(targetCentreName);
-    // find the target school in selectedSchools array and obtain the required information
+
+            // find the target school in selectedSchools array and obtain the required information
             for (let i = 0; i < selectedSchools.length; i++) {
                 if (targetCentreName == selectedSchools[i].centre_name.toLowerCase()){
                     targetCentre.centre_name = selectedSchools[i].centre_name;
@@ -143,7 +147,8 @@ $(() => {
                     targetCentre.spark_certified = selectedSchools[i].spark_certified;
                 }
             };
-    // obtain school fee information in centreFee array for targetSchool
+
+            // obtain school fee information in centreFee array for targetSchool
             for (let i = 0; i < centreFee.result.records.length; i++) {
                 if (targetCentre.centre_code == centreFee.result.records[i].centre_code && centreFee.result.records[i].type_of_citizenship == 'SC' && centreFee.result.records[i].type_of_service == 'Full Day') {
                     if (centreFee.result.records[i].levels_offered == 'Infant (2 to 18 mths)') {
@@ -165,7 +170,8 @@ $(() => {
             if (targetCentre.infant_fee == '') {
                 targetCentre.infant_fee ='N/A';
             }
-    // obtain centre license information in centreLicense array for targetSchool
+
+            // obtain centre license information in centreLicense array for targetSchool
             for (let i = 0; i < centreLicense.result.records.length; i++) {
                 if (targetCentre.centre_code == centreLicense.result.records[i].centre_code) {
                     targetCentre.license_tenure = centreLicense.result.records[i].license_tenure;
@@ -195,8 +201,9 @@ $(() => {
 
             let $targetCentreEmail=$('<li>').text('Email: ' + targetCentre.centre_email_address);
             $targetCentreInfoList.append($targetCentreEmail);
-//put in information for column1
-            $column1 = $('<div>').addClass('column1');
+
+            //put in information for column1
+            $column1 = $('<div>').addClass('column1').text('School Operation');
             $targetCentreWeekday = $('<div>').text('Weekday Operating Hours: '+ targetCentre.weekday_full_day);
             $targetCentreExtended = $('<div>').text('Extended Hours: '+ targetCentre.extended_operating_hours);
             $targetCentreTransport = $('<div>').text('Transport Service: ' + targetCentre.provision_of_transport);
@@ -210,8 +217,9 @@ $(() => {
             $column1.append($targetCentreGST);
             $column1.append($targetCentreScheme);
             $column1.append($targetCentreLanguage);
-//put in information for column2
-            $column2 = $('<div>').addClass('column2');
+
+            //put in information for column2
+            $column2 = $('<div>').addClass('column2').text('School Fee');
             $targetCentreInfantFee = $('<div>').text('Infant Care Fee: ' + targetCentre.infant_fee);
             $targetCentrePlaygroupFee = $('<div>').text('Playgroup Fee: ' + targetCentre.playgroup_fee);
             $targetCentrePrenurseryFee = $('<div>').text('Pre-Nursery Fee: ' + targetCentre.pre_nursery_fee);
@@ -225,8 +233,9 @@ $(() => {
             $column2.append($targetCentreNurseryFee);
             $column2.append($targetCentreKindergarten1Fee);
             $column2.append($targetCentreKindergarten2Fee);
-//put in information for column3
-            $column3 = $('<div>').addClass('column3');
+
+            //put in information for column3
+            $column3 = $('<div>').addClass('column3').text('School License');
             $targetCentreSpark = $('<div>').text('SPARK Certification: ' + targetCentre.spark_certified);
             $targetCentreLicenseTenure = $('<div>').text('License Tenure: ' + targetCentre.license_tenure);
             $targetCentreLicenseDate = $('<div>').text('License Issue Date: ' + targetCentre.license_issue_date);
@@ -236,18 +245,34 @@ $(() => {
             $column3.append($targetCentreLicenseDate);
 
 //Step 6: show Google map information of the target centre
+            $('.container').append('<div id="map"></div>');
+            console.log(targetCentre.centre_address);
 
+            // obtain geocode for the targetCentre address
+            // https://developers.google.com/maps/documentation/geocoding/start
+            // https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/map-latlng-literal
+            $.ajax({
+                url: 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAQQdFMOQIAxkIwy7CjeQRHT1Q1NOoZ0Xg&callback=initMap',
+                data: {address:targetCentre.centre_address}, //source is the targetCentre address
+                success: function(data) {
+                    let geo = data;
+                    targetCentre.geo_location = geo.results[0].geometry.location;
+                    console.log(geo);
+                    console.log(geo.results[0].geometry.location);
+                    console.log(targetCentre.geo_location);
 
+                    let map = new google.maps.Map(document.getElementById('map'), {
+                    center: targetCentre.geo_location,
+                    zoom: 15
+                    });
 
-
-
-
+                    let marker = new google.maps.Marker({
+                    position: targetCentre.geo_location,
+                    map: map,
+                    title: targetCentre.centre_name
+                    });
+                }
+            });
         });
     });
 });
-
-// How to use google map API
-// https://developers.google.com/maps/documentation/geocoding/start
-
-// How to use coordinate API
-// https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/map-latlng-literal
