@@ -34,22 +34,40 @@ body {
 	font-weight: 700;
 }
 
-.targetCentreInfoList {
-	text-align: center;
-	list-style: none;
+.targetCentreInfo {
+	width: 100%;
 	color: blue;
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+	justify-content: space-around;
+}
+
+.targetCentreInfoItem {
+  margin: 0 5px;
 }
 
 .flex {
-	padding: 10px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
+.column {
+	width: 300px;
+	margin: 5px;
+  background-color: lightgrey;
+  padding: 20px;
+}
+
+.columnTitle {
+	font-weight: 600;
+	text-decoration: underline;
+}
+
 #map {
-        height: 600px;
-        width: 100%;
-        margin:auto;
-        margin-top: 20px;
-      }
+  height: 400px;
+  width: 100%;
+  margin:auto;
+  margin-top: 20px;
+}

@@ -190,20 +190,21 @@ $(() => {
             let $targetCentreName = $('<div>').text(targetCentre.centre_name).addClass('targetCentreName');
             $targetCentre.append($targetCentreName);
 
-            let $targetCentreInfoList = $('<ul>').addClass('targetCentreInfoList');
-            $targetCentre.append($targetCentreInfoList);
+            let $targetCentreInfo = $('<div>').addClass('targetCentreInfo');
+            $targetCentre.append($targetCentreInfo);
 
-            let $targetCentreAddress = $('<li>').text(targetCentre.centre_address);
-            $targetCentreInfoList.append($targetCentreAddress);
+            let $targetCentreAddress = $('<div>').text(targetCentre.centre_address).addClass('targetCentreInfoItem');
+            $targetCentreInfo.append($targetCentreAddress);
 
-            let $targetCentreContact=$('<li>').text('Telephone: ' + targetCentre.centre_contact_no);
-            $targetCentreInfoList.append($targetCentreContact);
+            let $targetCentreContact=$('<div>').text('Telephone: ' + targetCentre.centre_contact_no).addClass('targetCentreInfoItem');
+            $targetCentreInfo.append($targetCentreContact);
 
-            let $targetCentreEmail=$('<li>').text('Email: ' + targetCentre.centre_email_address);
-            $targetCentreInfoList.append($targetCentreEmail);
+            let $targetCentreEmail=$('<div>').text('Email: ' + targetCentre.centre_email_address).addClass('targetCentreInfoItem');
+            $targetCentreInfo.append($targetCentreEmail);
 
             //put in information for column1
-            $column1 = $('<div>').addClass('column1').text('School Operation');
+            $column1 = $('<div>').addClass('column column1');
+            $column1Title = $('<div>').text('School Operation').addClass("columnTitle");
             $targetCentreWeekday = $('<div>').text('Weekday Operating Hours: '+ targetCentre.weekday_full_day);
             $targetCentreExtended = $('<div>').text('Extended Hours: '+ targetCentre.extended_operating_hours);
             $targetCentreTransport = $('<div>').text('Transport Service: ' + targetCentre.provision_of_transport);
@@ -211,6 +212,7 @@ $(() => {
             $targetCentreScheme = $('<div>').text('Extra Financial Support: ' + targetCentre.scheme_type);
             $targetCentreLanguage = $('<div>').text('Second Language Offered: '+ targetCentre.second_languages_offered);
             $flexContainer.append($column1);
+            $column1.append($column1Title);
             $column1.append($targetCentreWeekday);
             $column1.append($targetCentreExtended);
             $column1.append($targetCentreTransport);
@@ -219,7 +221,8 @@ $(() => {
             $column1.append($targetCentreLanguage);
 
             //put in information for column2
-            $column2 = $('<div>').addClass('column2').text('School Fee');
+            $column2 = $('<div>').addClass('column column2');
+            $column2Title = $('<div>').text('School Fee').addClass("columnTitle");
             $targetCentreInfantFee = $('<div>').text('Infant Care Fee: ' + targetCentre.infant_fee);
             $targetCentrePlaygroupFee = $('<div>').text('Playgroup Fee: ' + targetCentre.playgroup_fee);
             $targetCentrePrenurseryFee = $('<div>').text('Pre-Nursery Fee: ' + targetCentre.pre_nursery_fee);
@@ -227,6 +230,7 @@ $(() => {
             $targetCentreKindergarten1Fee = $('<div>').text('Kindergarten 1 Fee: ' + targetCentre.kindergarten1_fee);
             $targetCentreKindergarten2Fee = $('<div>').text('Kindergarten 2 Fee: ' + targetCentre.kindergarten2_fee);
             $flexContainer.append($column2);
+            $column2.append($column2Title);
             $column2.append($targetCentreInfantFee);
             $column2.append($targetCentrePlaygroupFee);
             $column2.append($targetCentrePrenurseryFee);
@@ -235,11 +239,13 @@ $(() => {
             $column2.append($targetCentreKindergarten2Fee);
 
             //put in information for column3
-            $column3 = $('<div>').addClass('column3').text('School License');
+            $column3 = $('<div>').addClass('column column3');
+            $column3Title = $('<div>').text('School License').addClass("columnTitle");
             $targetCentreSpark = $('<div>').text('SPARK Certification: ' + targetCentre.spark_certified);
             $targetCentreLicenseTenure = $('<div>').text('License Tenure: ' + targetCentre.license_tenure);
             $targetCentreLicenseDate = $('<div>').text('License Issue Date: ' + targetCentre.license_issue_date);
             $flexContainer.append($column3);
+            $column3.append($column3Title);
             $column3.append($targetCentreSpark);
             $column3.append($targetCentreLicenseTenure);
             $column3.append($targetCentreLicenseDate);
@@ -258,7 +264,6 @@ $(() => {
                     let geo = data;
                     targetCentre.geo_location = geo.results[0].geometry.location;
                     console.log(geo);
-                    console.log(geo.results[0].geometry.location);
                     console.log(targetCentre.geo_location);
 
                     let map = new google.maps.Map(document.getElementById('map'), {
