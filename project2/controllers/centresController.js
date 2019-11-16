@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 
-// LINK WITH PRODUCT MODEL
+// LINK WITH CENTRE MODEL
 const Centre = require("../models/centre/centre");
 const newCentres = require("../models/centre/seed_centre");
 
@@ -18,27 +18,27 @@ const newCentres = require("../models/centre/seed_centre");
 // 1. INDEX PAGE
 router.get("/", (req, res) => {
   Centre.find({}, (error, allCentres) => {
-    res.render("index.ejs", {
+    res.render("centres/index.ejs", {
       centres: allCentres
     });
   });
 });
 
-// 2. NEW PAGE
+// 2. NEW CENTRE PAGE
 router.get("/new", (req, res) => {
-  res.render("new.ejs");
+  res.render("centres/new.ejs");
 });
 
 // 3. SHOW PAGE
 router.get("/:id", (req, res) => {
   Centre.findById(req.params.id, (err, foundCentre) => {
-    res.render("show.ejs", {
+    res.render("centres/show.ejs", {
       centre: foundCentre
     });
   });
 });
 
-// 4. POST
+// 4. POST NEW CENTRE
 router.post("/", (req, res) => {
   Centre.create(req.body, (error, createdCentre) => {
     res.redirect("/raffleskidz/centres");
@@ -48,7 +48,7 @@ router.post("/", (req, res) => {
 // 5. EDIT PAGE
 router.get("/:id/edit", (req, res) => {
   Centre.findById(req.params.id, (err, foundCentre) => {
-    res.render("edit.ejs", {
+    res.render("centres/edit.ejs", {
       centre: foundCentre
     });
   });

@@ -1,7 +1,11 @@
 // SERVER SETUP
 const express = require("express"); // USE EXPRESS FOR SERVER, ROUTES, RESTFUL APIS
 const app = express(); // SHORTHAND FOR EXPRESS
-const port = 3000; // SET A PORT ON LOCAL HOST
+require("dotenv").config(); // SET ENVIRONMENT VARIABLES
+
+// CONFIGURATION SETUP
+const port = process.env.PORT;
+const mongoURI = process.env.MONGODB_URI;
 
 // MIDDLEWARE SETUP
 const methodOverride = require("method-override"); // MIDDLEWARE FOR FORM TO PERFORM POST AND DELETE FUNCTIONS
@@ -11,6 +15,15 @@ app.use(express.urlencoded({ extended: false })); // USE BODY PARSER TO PERFORM 
 app.use(express.static("public")); // USE STATIC CSS
 
 const session = require("express-session"); // USE SESSION
+app.use(
+  session({
+    secret: process.env.SECRET, //a random string do not copy this value or your stuff will get hacked
+    resave: false,
+    saveUninitialized: false
+  })
+);
+
+const bcrypt = require("bcrypt");
 
 app.use((req, res, next) => {
   // MONITOR CLIENT ACTION AND SEND ALERT
@@ -20,7 +33,6 @@ app.use((req, res, next) => {
 
 // DATABASE SETUP
 const mongoose = require("mongoose"); // USE MONGOOSE TO MANAGE MONGODB
-const mongoURI = "mongodb://localhost:27017/" + "raffleskidz"; // SET URI TO CONNECT WITH MONGODB, SUB-DATABASE NAMED "PRODUCTS"
 mongoose.connect(
   // CONNECT TO MONGODB
   mongoURI,
@@ -37,7 +49,16 @@ db.on("disconnected", () => console.log("mongo disconnected")); // ALERT MESSAGE
 
 // SET UP CONTROLLER
 const centresController = require("./controllers/centresController.js"); //IMPORT ROUTER IN CONTROLLER FILE
-app.use("/raffleskidz/centres", centresController); // ALWAYS USE ROUTER ON "/PRODUCTS" ROUTE
+app.use("/raffleskidz/centres", centresController); // ALWAYS USE ROUTER ON "/CENTRES" ROUTE
+
+const loginController = require("./controllers/loginController.js"); //IMPORT ROUTER IN CONTROLLER FILE
+app.use("/login", loginController); // ALWAYS USE ROUTER ON "/LOGIN" ROUTE
+
+const usersController = require("./controllers/usersController.js");
+app.use("/users", usersController);
+
+const sessionsController = require("./controllers/sessionsController.js");
+app.use("/sessions", sessionsController);
 
 // PORT LISTENER
 app.listen(port, () => {

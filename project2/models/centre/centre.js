@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema; // SHORTHAND FOR MONGOOSE SCHEMA
 
-// USE SCHEMA SETUP
+// CENTRE SCHEMA SETUP
 const centreSchema = new Schema(
   {
     name: { type: String, required: true, unique: true },
@@ -18,5 +18,5 @@ const centreSchema = new Schema(
 // CENTRE MODEL SETUP
 const Centre = mongoose.model("Centre", centreSchema); // DEFINE MONGODB DOCUMENT "CENTRE"
 
-// EXPORT PRODUCT MODEL
+// EXPORT CENTRE MODEL
 module.exports = Centre;
