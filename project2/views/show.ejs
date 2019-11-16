@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Centre Detail</title>
+    <% include ./partials/head.ejs %>
+  </head>
+  <body>
+    <h1>Centre Show Page</h1>
+    <p class="pageSwitch">
+      <a href="/raffleskidz/centres">Back to centres</a>
+    </p>
+    <h2><%= centre.name %></h2>
+    <div class="centre">
+      <img src="<%= centre.img %>" class="centreImage" />
+      <h3><%= centre.description %></h3>
+      <h3>School Fee: <%= centre.fee %></h3>
+      <h3>School Capacity: <%= centre.capacity %></h3>
+      <P></P>
+      <a href="/raffleskidz/centres/<%= centre.id %>/edit">Edit this centre</a>
+    </div>
+    <form
+      action="/raffleskidz/centres/<%= centre.id; %>?_method=DELETE"
+      method="POST"
+    >
+      <input type="submit" value="DELETE" />
+    </form>
+  </body>
+</html>

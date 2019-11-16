@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Centre</title>
+    <% include ./partials/head.ejs %>
+  </head>
+  <body>
+    <h1>New Centre Page</h1>
+    <div class="centreEdit">
+      <form action="/raffleskidz/centres" method="POST">
+        <table align="center">
+          <tr>
+            <td><label> Name </label></td>
+            <td>
+              <input type="text" name="name" />
+            </td>
+          </tr>
+          <tr>
+            <td><label> Address </label></td>
+            <td>
+              <input type="text" name="address" />
+            </td>
+          </tr>
+          <tr>
+            <td><label> Description </label></td>
+            <td>
+              <input type="text" name="description" />
+            </td>
+          </tr>
+          <tr>
+            <td><label> School Fee </label></td>
+            <td>
+              <input type="number" name="fee" />
+            </td>
+          </tr>
+          <tr>
+            <td><label> Capacity </label></td>
+            <td>
+              <input type="number" name="capacity" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <input type="submit" value="Submit" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

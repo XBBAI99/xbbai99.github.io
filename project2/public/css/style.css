@@ -1,0 +1,54 @@
+/* GENERAL PAGE STYLING */
+body {
+  text-align: center;
+  background-color: rgb(190, 107, 11);
+  justify-content: center;
+}
+
+h1 {
+  color: whitesmoke;
+}
+
+/* CENTRE INDEX PAGE STYLING */
+.container {
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pageSwitch {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.centre {
+  width: 240px;
+  padding: 20px;
+  margin: 20px auto;
+  background-color: rgb(241, 205, 85);
+  justify-content: center;
+}
+
+.centre h2 {
+  color: whitesmoke;
+}
+
+.centreImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+}
+
+.centreEdit {
+  width: 400px;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+/* SHOW PAGE STYLING */
+.button,
+form {
+  margin: 0;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Centre Edit</title>
+    <% include ./partials/head.ejs %>
+  </head>
+  <body>
+    <h1>Edit Centre Page</h1>
+    <img src="<%= centre.img %>" class="centreImage" />
+    <div class="centreEdit">
+      <form
+        action="/raffleskidz/centres/<%= centre.id %>?_method=PUT"
+        method="POST"
+      >
+        <table align="center">
+          <tr>
+            <td><label> Name </label></td>
+            <td>
+              <input type="text" name="name" value="<%= centre.name %>" />
+            </td>
+          </tr>
+          <tr>
+            <td><label> Address </label></td>
+            <td>
+              <input type="text" name="address" value="<%= centre.address %>" />
+            </td>
+          </tr>
+          <tr>
+            <td><label> Description </label></td>
+            <td>
+              <input
+                type="text"
+                name="description"
+                value="<%= centre.description %>"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label> School Fee </label></td>
+            <td>
+              <input type="number" name="fee" value="<%= centre.fee %>" />
+            </td>
+          </tr>
+          <tr>
+            <td><label> Capacity </label></td>
+            <td>
+              <input
+                type="number"
+                name="capacity"
+                value="<%= centre.capacity %>"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <input type="submit" value="Submit Changes" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Centre Index</title>
+    <% include ./partials/head.ejs %>
+  </head>
+  <body>
+    <h1>Product Index Page</h1>
+    <p class="pageSwitch">
+      <a href="/raffleskidz/centres/new">Create New Centre</a>
+    </p>
+    <div class="container">
+      <% for(let i = 0; i < centres.length; i++) { %>
+      <div class="centre">
+        <h2><%= centres[i].name %></h2>
+        <a href="/raffleskidz/centres/<%= centres[i].id %>">
+          <img src="<%= centres[i].img %>" class="centreImage"
+        /></a>
+        <h2><%= centres[i].description %></h2>
+        <h2>School Fee: $<%= centres[i].fee %></h2>
+        <h2>School Capacity: <%= centres[i].capacity %></h2>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>
