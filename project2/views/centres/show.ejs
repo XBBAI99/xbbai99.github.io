@@ -5,7 +5,19 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
-    <h1>Centre Show Page</h1>
+    <div id="dashBoard">
+      <button
+        class="mdc-button mdc-button--raised"
+        onclick="location.href='/dashboard'"
+      >
+        <span class="mdc-button__ripple"></span>Dashboard
+      </button>
+    </div>
+    <img
+      src="../../images/raffleskidz.jpg"
+      class="brandLogoImage"
+      alt="Image"
+    />
     <p class="pageSwitch">
       <a href="/raffleskidz/centres">Back to centres</a>
     </p>

@@ -19,7 +19,6 @@ body {
 }
 
 /* DASHBOARD PAGE STYLING */
-
 .dashBoardContainer {
   justify-content: center;
   margin: 5% 20% 5% 20%;
@@ -33,6 +32,10 @@ body {
 }
 
 /* CENTRE INDEX PAGE STYLING */
+#dashBoard {
+  text-align: right;
+}
+
 .brandLogoImage {
   width: 10%;
   height: 3%;

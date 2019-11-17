@@ -5,6 +5,14 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
+    <div id="dashBoard">
+      <button
+        class="mdc-button mdc-button--raised"
+        onclick="location.href='/dashboard'"
+      >
+        <span class="mdc-button__ripple"></span>Dashboard
+      </button>
+    </div>
     <img src="../images/raffleskidz.jpg" class="brandLogoImage" alt="Image" />
     <div class="centreIndexContainer">
       <% for(let i = 0; i < centres.length; i++) { %>
