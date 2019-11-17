@@ -17,11 +17,15 @@ const newCentres = require("../models/centre/seed_centre");
 
 // 1. INDEX PAGE
 router.get("/", (req, res) => {
-  Centre.find({}, (error, allCentres) => {
-    res.render("centres/index.ejs", {
-      centres: allCentres
+  if (req.session.currentUser) {
+    Centre.find({}, (error, allCentres) => {
+      res.render("centres/index.ejs", {
+        centres: allCentres
+      });
     });
-  });
+  } else {
+    res.redirect("/sessions/new");
+  }
 });
 
 // 2. NEW CENTRE PAGE

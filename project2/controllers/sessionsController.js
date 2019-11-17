@@ -2,6 +2,9 @@
 const express = require("express");
 const sessions = express.Router();
 
+// PASSWORD ENCRYPTION
+const bcrypt = require("bcrypt");
+
 // LINK WITH USER MODEL
 const User = require("../models/user/user");
 
@@ -21,7 +24,7 @@ sessions.post("/", (req, res) => {
     } else if (!foundUser) {
       res.send("user not found!");
     } else {
-      if (req.body.password == foundUser.password) {
+      if (bcrypt.compareSync(req.body.password, foundUser.password)) {
         req.session.currentUser = foundUser;
         res.redirect("/login");
         // if passwords don't match, handle the error
@@ -29,6 +32,13 @@ sessions.post("/", (req, res) => {
         res.send('<a href="/">wrong password</a>');
       }
     }
+  });
+});
+
+// DELETE SESSION WHEN LOGOUT
+sessions.delete("/", (req, res) => {
+  req.session.destroy(() => {
+    res.redirect("/login");
   });
 });
 

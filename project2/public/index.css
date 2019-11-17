@@ -1,0 +1,73 @@
+body {
+  text-align: left;
+}
+
+#searchBar {
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  text-align: left;
+  margin: 3% 0% 0% 3%;
+}
+
+.centreName {
+  color: blue;
+}
+
+.centreName:hover {
+  text-decoration: underline;
+}
+
+.centreInfoList {
+  list-style: none;
+  padding: 0px;
+}
+
+.targetCentreName {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.targetCentreInfo {
+  width: 100%;
+  color: blue;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: space-around;
+}
+
+.targetCentreInfoItem {
+  margin: 0 5px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.column {
+  width: 350px;
+  margin: 5px;
+  background-color: lightgrey;
+  padding: 20px;
+}
+
+.columnTitle {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+}
