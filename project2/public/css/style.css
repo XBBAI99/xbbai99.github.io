@@ -1,8 +1,21 @@
 /* GENERAL PAGE STYLING */
 body {
   text-align: center;
-  background-color: rgb(190, 107, 11);
   justify-content: center;
+}
+
+/* SIGN IN PAGE STYLING */
+.signInSection {
+  border-style: groove;
+  border-width: 0.5px;
+  border-radius: 10px;
+  margin: 5% 35%;
+  padding: 5%;
+}
+
+.signInLogoImage {
+  width: 50%;
+  height: 30%;
 }
 
 h1 {

@@ -3,29 +3,54 @@
   <head>
     <% include ../partials/head.ejs %>
   </head>
-    <body>
-      <div class="container">
-        <h1>Create User</h1>
-        <div class="row">
-          <form class="col s12" action="/users" method="POST">
-            <div class="row">
-              <div class="input-field col s6">
-                <input placeholder="Placeholder" id="username" type="text" class="validate" name="username" required>
-                <label for="username">User Name</label>
-              </div>
+  <body class="mdc-typography">
+    <div class="signInSection">
+      <img src="../images/logo.png" class="signInLogoImage" alt="Image" />
+      <h6 class="mdc-typography--headline6">Create your EDOOVO Account</h6>
+      <form action="/users" method="POST">
+        <div
+          class="mdc-text-field mdc-text-field--outlined mdc-text-field--dense mdc-text-field--focused"
+        >
+          <input
+            type="text"
+            placeholder="Username*"
+            class="mdc-text-field__input"
+            id="username"
+            name="username"
+          />
+          <div class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+              <label for="username" class="mdc-floating-label"></label>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="password" type="password" class="validate" name="password" required>
-                <label for="password">Password</label>
-              </div>
-            </div>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-              <i class="material-icons right">send</i>
-            </button>
-          </form>
+            <div class="mdc-notched-outline__trailing"></div>
+          </div>
         </div>
-    </body>
+        <p></p>
+        <div
+          class="mdc-text-field mdc-text-field--outlined mdc-text-field--dense mdc-text-field--focused"
+        >
+          <input
+            type="password"
+            placeholder="Password*"
+            class="mdc-text-field__input"
+            id="password"
+            name="password"
+          />
+          <div class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+              <label for="password" class="mdc-floating-label"></label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+          </div>
+        </div></br>
+        <P></P>
+        <button type="submit" class="mdc-button mdc-button--raised">
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label">Create</span>
+        </button>
+      </form>
+    </div>
+  </body>
 </html>
-
-
