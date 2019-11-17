@@ -18,33 +18,38 @@ body {
   height: 30%;
 }
 
-h1 {
-  color: whitesmoke;
+/* DASHBOARD PAGE STYLING */
+
+.dashBoardContainer {
+  justify-content: center;
+  margin: 5% 20% 5% 20%;
+}
+
+#viewCentre {
+  width: 260px;
+  padding: 20px;
+  margin: auto;
+  justify-content: center;
 }
 
 /* CENTRE INDEX PAGE STYLING */
-.container {
+.brandLogoImage {
+  width: 10%;
+  height: 3%;
+}
+
+.centreIndexContainer {
   justify-content: center;
-  margin: auto;
+  margin: 0% auto 3%;
   display: flex;
   flex-wrap: wrap;
 }
 
-.pageSwitch {
-  font-size: 1em;
-  font-weight: 700;
-}
-
 .centre {
-  width: 240px;
+  width: 260px;
   padding: 20px;
-  margin: 20px auto;
-  background-color: rgb(241, 205, 85);
+  margin: auto;
   justify-content: center;
-}
-
-.centre h2 {
-  color: whitesmoke;
 }
 
 .centreImage {
@@ -58,10 +63,4 @@ h1 {
   padding: 20px;
   margin: 20px auto;
   text-align: left;
-}
-
-/* SHOW PAGE STYLING */
-.button,
-form {
-  margin: 0;
 }

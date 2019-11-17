@@ -38,7 +38,7 @@ sessions.post("/", (req, res) => {
 // DELETE SESSION WHEN LOGOUT
 sessions.delete("/", (req, res) => {
   req.session.destroy(() => {
-    res.redirect("/signin");
+    res.redirect("/sessions/new");
   });
 });
 

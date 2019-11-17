@@ -1,27 +1,56 @@
 <!DOCTYPE html>
-<head>
+<html>
+  <head>
     <% include ../partials/head.ejs %>
-</head>
-<body>
-  <div class="container">
+  </head>
+  <body>
     <h6 class="mdc-typography--headline6">
-    <% if(currentUser) { %>
-    Welcome to your EDOOVO Account, <%=currentUser.username%>!
+      Welcome to your EDOOVO Account, <%=currentUser.username%>!
     </h6>
-    <h2>
-      <a href="/raffleskidz/centres">See All Centres</a>
-    </h2>
+    <div class="dashBoardContainer">
+      <div id="viewCentre" class="mdc-card demo-card">
+        <div
+          class="mdc-card__primary-action demo-card__primary-action"
+          tabindex="0"
+        >
+          <div
+            class="mdc-card__media mdc-card__media--16-9 demo-card__media"
+            style='background-image: url("../images/raffleskidz.jpg");'
+          ></div>
+          <div class="demo-card__primary">
+            <h6
+              class="demo-card__title mdc-typography mdc-typography--headline6"
+            >
+              Centre Info
+            </h6>
+          </div>
+          <div
+            class="demo-card__secondary mdc-typography mdc-typography--body2"
+          >
+            See centre list and select any centre for more detailed information.
+          </div>
+        </div>
+        <div class="mdc-card__actions">
+          <div class="mdc-card__action-buttons">
+            <button
+              class="mdc-button mdc-card__action mdc-card__action--button"
+              onclick="location.href='raffleskidz/centres'"
+            >
+              <span class="mdc-button__ripple"></span> View
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <form action="/sessions?_method=DELETE" method="POST">
-      <input type="submit" value="Logout"/>
+      <button type="submit" class="mdc-button mdc-button--raised">
+        <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label">Log out</span>
+      </button>
     </form>
-    <% } else { %>
-    <h2>Please </h2>
-    <a class="waves-effect waves-light btn" href="/sessions/new">Log In</a>
-    <h3>or</h3>
-    <a class="waves-effect waves-light btn" href="/users/new">Sign Up</a>
-    <% } %>
-  </div>
-</body>
+  </body>
 </html>
 
-
+<!-- <form action="/sessions?_method=DELETE" method="POST">
+  <input type="submit" value="Logout" />
+</form> -->

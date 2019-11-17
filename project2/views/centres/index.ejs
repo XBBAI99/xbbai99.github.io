@@ -5,22 +5,56 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
-    <h1>Product Index Page</h1>
-    <p class="pageSwitch">
-      <a href="/raffleskidz/centres/new">Create New Centre</a>
-    </p>
-    <div class="container">
+    <img src="../images/raffleskidz.jpg" class="brandLogoImage" alt="Image" />
+    <div class="centreIndexContainer">
       <% for(let i = 0; i < centres.length; i++) { %>
-      <div class="centre">
-        <h2><%= centres[i].name %></h2>
-        <a href="/raffleskidz/centres/<%= centres[i].id %>">
-          <img src="<%= centres[i].img %>" class="centreImage"
-        /></a>
-        <h2><%= centres[i].description %></h2>
-        <h2>School Fee: $<%= centres[i].fee %></h2>
-        <h2>School Capacity: <%= centres[i].capacity %></h2>
+      <div class="mdc-card demo-card centre">
+        <div
+          class="mdc-card__primary-action demo-card__primary-action"
+          tabindex="0"
+        >
+          <div
+            class="mdc-card__media mdc-card__media--16-9 demo-card__media"
+            style='background-image: url("<%= centres[i].img %>");'
+          ></div>
+          <div class="demo-card__primary">
+            <p
+              class="demo-card__title mdc-typography mdc-typography--subtitle1"
+            >
+              <%= centres[i].name %>
+            </p>
+          </div>
+          <div
+            class="demo-card__secondary mdc-typography mdc-typography--body2"
+          >
+            <%= centres[i].description %>
+          </div>
+        </div>
+        <div class="mdc-card__actions">
+          <div class="mdc-card__action-buttons">
+            <button
+              class="mdc-button mdc-card__action mdc-card__action--button"
+              onclick="location.href='/raffleskidz/centres/<%= centres[i].id %>'"
+            >
+              <span class="mdc-button__ripple"></span> View
+            </button>
+          </div>
+        </div>
       </div>
       <% } %>
     </div>
+    <P></P>
+    <button
+      class="mdc-button mdc-button--raised"
+      onclick="location.href='/raffleskidz/centres/new'"
+    >
+      <div class="mdc-button__ripple"></div>
+      <span class="mdc-button__label">New centre</span>
+    </button>
   </body>
 </html>
+
+<!-- 
+<p class="pageSwitch">
+    <a href="/raffleskidz/centres/new">Create New Centre</a>
+  </p> -->
