@@ -25,7 +25,7 @@ users.post("/", (req, res) => {
       console.log(err);
     }
     console.log(createdUser);
-    res.redirect("/login");
+    res.redirect("/signin");
   });
 });
 

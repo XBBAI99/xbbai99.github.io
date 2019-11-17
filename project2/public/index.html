@@ -1,30 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>EDOOVO</title>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      charset="utf-8"
+    ></script>
+    <link
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto">
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9jp8Lt4dja80ZDfdtXzcGMCs5hOfmuVE"
+      async
+      defer
+    ></script>
+    <script src="search.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>EDOOVO</title>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9jp8Lt4dja80ZDfdtXzcGMCs5hOfmuVE"
-    async defer></script>
-  <script src="search.js" charset="utf-8"></script>
-  <link rel="stylesheet" href="index.css">
-</head>
+  <body>
+    <div id="signIn">
+      <button class="mdc-button mdc-button--raised">  <span class="mdc-button__ripple"></span>Sign in</button>
+    </div>
+    <div id="searchBar">
+      <img src="images/logo.png" id="logoImage" alt="Responsive image" />
+    <P></P>
+      <form>
+        <div
+          class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon mdc-text-field--dense mdc-text-field--focused"
+        >
+          <i class="material-icons mdc-text-field__icon">search</i>
+          <input
+            type="text"
+            placeholder="Child Care Centre Name"
+            class="mdc-text-field__input"
+            id="input-box"
+          />
+          <div class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+              <label for="input-box" class="mdc-floating-label"></label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+          </div>
+        </div> </br>
+        <p></p>
+        <button type="submit" class="mdc-button mdc-button--raised" id="submit">
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label">Search</span>
+        </button>
+      </form>
+    </div>
 
-<body>
-  <div id="searchBar">
-    <img src="images/Logo.png" class="img-fluid" alt="Responsive image">
-    <h1>
-      <small class="text-muted">Search for the right school</small>
-    </h1>
-    <form>
-      <input type="text" placeholder="Child Care Centre Name" id='input-box'></input>
-      <button type="submit" class="btn btn-primary mb-2" id="submit">Submit</button>
-    </form>
-  </div>
+    <div class="container"></div>
 
-  <div class="container">
-  </div>
-</body>
+  </body>
 </html>
