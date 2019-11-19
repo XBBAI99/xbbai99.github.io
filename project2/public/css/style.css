@@ -1,10 +1,19 @@
-/* GENERAL PAGE STYLING */
+/* GENERAL PAGE */
 body {
   text-align: center;
   justify-content: center;
 }
 
-/* SIGN IN PAGE STYLING */
+#dashBoard {
+  text-align: right;
+}
+
+#brandLogoImage {
+  width: 10%;
+  height: 3%;
+}
+
+/* SIGN IN PAGE */
 .signInSection {
   border-style: groove;
   border-width: 0.5px;
@@ -18,29 +27,22 @@ body {
   height: 30%;
 }
 
-/* DASHBOARD PAGE STYLING */
+/* DASHBOARD PAGE */
 .dashBoardContainer {
-  justify-content: center;
-  margin: 5% 20% 5% 20%;
+  width: 400px;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
 }
 
-#viewCentre {
+#centreInfo {
   width: 260px;
   padding: 20px;
   margin: auto;
   justify-content: center;
 }
 
-/* CENTRE INDEX PAGE STYLING */
-#dashBoard {
-  text-align: right;
-}
-
-.brandLogoImage {
-  width: 10%;
-  height: 3%;
-}
-
+/* CENTRE INDEX PAGE */
 .centreIndexContainer {
   justify-content: center;
   margin: 0% auto 3%;
@@ -50,7 +52,7 @@ body {
 
 .centre {
   width: 260px;
-  padding: 20px;
+  padding: 0px;
   margin: auto;
   justify-content: center;
 }
@@ -61,7 +63,23 @@ body {
   border-radius: 20px;
 }
 
-.centreEdit {
+/* CENTRE SHOW PAGE */
+.centreContainer {
+  width: 50%;
+  justify-content: center;
+  margin: auto;
+}
+
+/* NEW CENTRE PAGE */
+.newCentreContainer {
+  width: 400px;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+/* CENTRE EDIT PAGE */
+.centreEditContainer {
   width: 400px;
   padding: 20px;
   margin: 20px auto;

@@ -13,51 +13,111 @@
         <span class="mdc-button__ripple"></span>Dashboard
       </button>
     </div>
-    <img
-      src="../../images/raffleskidz.jpg"
-      class="brandLogoImage"
-      alt="Image"
-    />
-    <div class="centreEdit">
-      <form action="/raffleskidz/centres" method="POST">
-        <table align="center">
-          <tr>
-            <td><label> Name </label></td>
-            <td>
-              <input type="text" name="name" />
-            </td>
-          </tr>
-          <tr>
-            <td><label> Address </label></td>
-            <td>
-              <input type="text" name="address" />
-            </td>
-          </tr>
-          <tr>
-            <td><label> Description </label></td>
-            <td>
-              <input type="text" name="description" />
-            </td>
-          </tr>
-          <tr>
-            <td><label> School Fee </label></td>
-            <td>
-              <input type="number" name="fee" />
-            </td>
-          </tr>
-          <tr>
-            <td><label> Capacity </label></td>
-            <td>
-              <input type="number" name="capacity" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2" align="center">
-              <input type="submit" value="Submit" />
-            </td>
-          </tr>
-        </table>
-      </form>
+
+    <img src="/images/raffleskidz.jpg" id="brandLogoImage" alt="Image" />
+
+    <div class="newCentreContainer">
+      <div class="mdc-card demo-card">
+        <div
+          class="mdc-card__primary-action demo-card__primary-action"
+          tabindex="0"
+        >
+          <form action="/raffleskidz/centres" method="POST">
+            <table align="center">
+              <P></P>
+              <tr>
+                <td><label> Name </label></td>
+                <td>
+                  <div class="mdc-text-field">
+                    <input
+                      type="text"
+                      class="mdc-text-field__input"
+                      id="name"
+                      name="name"
+                    />
+                    <div class="mdc-line-ripple"></div>
+                    <label for="name" class="mdc-floating-label"></label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><label> Address </label></td>
+                <td>
+                  <div class="mdc-text-field">
+                    <input
+                      type="text"
+                      class="mdc-text-field__input"
+                      id="address"
+                      name="address"
+                    />
+                    <div class="mdc-line-ripple"></div>
+                    <label for="address" class="mdc-floating-label"></label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><label> Description </label></td>
+                <td>
+                  <div class="mdc-text-field">
+                    <input
+                      type="text"
+                      class="mdc-text-field__input"
+                      id="description"
+                      name="description"
+                    />
+                    <div class="mdc-line-ripple"></div>
+                    <label for="description" class="mdc-floating-label"></label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><label> School Fee </label></td>
+                <td>
+                  <div class="mdc-text-field">
+                    <input
+                      type="text"
+                      class="mdc-text-field__input"
+                      id="fee"
+                      name="fee"
+                    />
+                    <div class="mdc-line-ripple"></div>
+                    <label for="fee" class="mdc-floating-label"></label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><label> Capacity </label></td>
+                <td>
+                  <div class="mdc-text-field">
+                    <input
+                      type="text"
+                      class="mdc-text-field__input"
+                      id="capacity"
+                      name="capacity"
+                    />
+                    <div class="mdc-line-ripple"></div>
+                    <label for="capacity" class="mdc-floating-label"></label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" align="center">
+                  <P></P>
+                  <button
+                    type="submit"
+                    class="mdc-button mdc-button--raised"
+                    id="submit"
+                  >
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Submit</span>
+                  </button>
+                  <P></P>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>

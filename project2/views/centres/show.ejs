@@ -13,28 +13,67 @@
         <span class="mdc-button__ripple"></span>Dashboard
       </button>
     </div>
-    <img
-      src="../../images/raffleskidz.jpg"
-      class="brandLogoImage"
-      alt="Image"
-    />
-    <p class="pageSwitch">
-      <a href="/raffleskidz/centres">Back to centres</a>
-    </p>
-    <h2><%= centre.name %></h2>
-    <div class="centre">
-      <img src="<%= centre.img %>" class="centreImage" />
-      <h3><%= centre.description %></h3>
-      <h3>School Fee: <%= centre.fee %></h3>
-      <h3>School Capacity: <%= centre.capacity %></h3>
-      <P></P>
-      <a href="/raffleskidz/centres/<%= centre.id %>/edit">Edit this centre</a>
+
+    <img src="../../images/raffleskidz.jpg" id="brandLogoImage" alt="Image" />
+
+    <div class="centreContainer">
+      <div class="mdc-card demo-card">
+        <div
+          class="mdc-card__primary-action demo-card__primary-action"
+          tabindex="0"
+        >
+          <div
+            class="mdc-card__media mdc-card__media--16-9 demo-card__media"
+            style='background-image: url("<%= centre.img %>");'
+          ></div>
+          <div class="demo-card__primary">
+            <h2
+              class="demo-card__title mdc-typography mdc-typography--headline6"
+            >
+              <%= centre.name %>
+            </h2>
+            <h3
+              class="demo-card__subtitle mdc-typography mdc-typography--subtitle2"
+            >
+              by Kurt Wagner
+            </h3>
+          </div>
+          <div
+            class="demo-card__secondary mdc-typography mdc-typography--body2"
+          >
+            <h3><%= centre.description %></h3>
+            <h3>School Fee: <%= centre.fee %></h3>
+            <h3>School Capacity: <%= centre.capacity %></h3>
+          </div>
+        </div>
+        <div class="mdc-card__actions">
+          <div class="mdc-card__action-buttons">
+            <button
+              class="mdc-button mdc-card__action mdc-card__action--button"
+              onclick="location.href='/raffleskidz/centres/<%= centre.id %>/edit'"
+            >
+              <span class="mdc-button__ripple"></span> Edit
+            </button>
+            <form
+              action="/raffleskidz/centres/<%= centre.id; %>?_method=DELETE"
+              method="POST"
+            >
+              <button type="submit" class="mdc-button">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">Delete</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-    <form
-      action="/raffleskidz/centres/<%= centre.id; %>?_method=DELETE"
-      method="POST"
+    <P></P>
+    <button
+      class="mdc-button mdc-button--raised"
+      onclick="location.href='/raffleskidz/centres'"
     >
-      <input type="submit" value="DELETE" />
-    </form>
+      <div class="mdc-button__ripple"></div>
+      <span class="mdc-button__label">Back to centres</span>
+    </button>
   </body>
 </html>
