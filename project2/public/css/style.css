@@ -13,6 +13,14 @@ body {
   height: 3%;
 }
 
+.linkName {
+  text-decoration: none;
+}
+
+.text-field-width {
+  width: 250px;
+}
+
 /* SIGN IN PAGE */
 .signInSection {
   border-style: groove;
@@ -29,17 +37,15 @@ body {
 
 /* DASHBOARD PAGE */
 .dashBoardContainer {
-  width: 400px;
-  padding: 20px;
-  margin: 20px auto;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0% 0% 0% 10%;
 }
 
-#centreInfo {
-  width: 260px;
+.dashBoardBox {
+  width: 200px;
   padding: 20px;
-  margin: auto;
-  justify-content: center;
+  margin: 2%;
 }
 
 /* CENTRE INDEX PAGE */
@@ -82,6 +88,36 @@ body {
 .centreEditContainer {
   width: 400px;
   padding: 20px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+/* EMPLOYEE INDEX PAGE */
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* EMPLOYEE SHOW PAGE */
+.employeeContainer {
+  width: 20%;
+  justify-content: center;
+  margin: auto;
+}
+
+/* NEW EMPLOYEE PAGE */
+.newEmployeeContainer {
+  width: 400px;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+/* EMPLOYEE EDIT PAGE */
+.employeeEditContainer {
+  width: 30%;
   margin: 20px auto;
   text-align: left;
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Centre Detail</title>
+    <title>Employee Detail</title>
     <% include ../partials/head.ejs %>
   </head>
   <body>
@@ -16,50 +16,45 @@
 
     <img src="../../images/raffleskidz.jpg" id="brandLogoImage" alt="Image" />
 
-    <div class="centreContainer">
+    <div class="employeeContainer">
       <div class="mdc-card demo-card">
         <div
           class="mdc-card__primary-action demo-card__primary-action"
           tabindex="0"
         >
           <div
-            class="mdc-card__media mdc-card__media--16-9 demo-card__media"
-            style='background-image: url("<%= centre.img %>");'
+            class="mdc-card__media mdc-card__media--square demo-card__media"
+            style='background-image: url("<%= employee.img %>");'
           ></div>
           <div class="demo-card__primary">
             <h2
               class="demo-card__title mdc-typography mdc-typography--headline6"
             >
-              <%= centre.name %>
+              <%= employee.name %>
             </h2>
             <h3
               class="demo-card__subtitle mdc-typography mdc-typography--subtitle2"
             >
-              <a
-                class="linkName"
-                href="/raffleskidz/centres/<%= centre.id %>/employees"
-                >Centre Team</a
-              >
+              <%= employee.centre.name %>
             </h3>
           </div>
           <div
             class="demo-card__secondary mdc-typography mdc-typography--body2"
           >
-            <h3><%= centre.description %></h3>
-            <h3>School Fee: <%= centre.fee %></h3>
-            <h3>School Capacity: <%= centre.capacity %></h3>
+            <h3>Title: <%= employee.title %></h3>
+            <h3>Year of Joining: <%= employee.joinYear %></h3>
           </div>
         </div>
         <div class="mdc-card__actions">
           <div class="mdc-card__action-buttons">
             <button
               class="mdc-button mdc-card__action mdc-card__action--button"
-              onclick="location.href='/raffleskidz/centres/<%= centre.id %>/edit'"
+              onclick="location.href='/raffleskidz/employees/<%= employee.id %>/edit'"
             >
               <span class="mdc-button__ripple"></span> Edit
             </button>
             <form
-              action="/raffleskidz/centres/<%= centre.id; %>?_method=DELETE"
+              action="/raffleskidz/employees/<%= employee.id; %>?_method=DELETE"
               method="POST"
             >
               <button type="submit" class="mdc-button">
@@ -74,10 +69,10 @@
     <P></P>
     <button
       class="mdc-button mdc-button--raised"
-      onclick="location.href='/raffleskidz/centres'"
+      onclick="location.href='/raffleskidz/employees'"
     >
       <div class="mdc-button__ripple"></div>
-      <span class="mdc-button__label">Back to centres</span>
+      <span class="mdc-button__label">Back to employees</span>
     </button>
   </body>
 </html>

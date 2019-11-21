@@ -51,6 +51,9 @@ db.on("disconnected", () => console.log("mongo disconnected")); // ALERT MESSAGE
 const centresController = require("./controllers/centresController.js"); //IMPORT ROUTER IN CONTROLLER FILE
 app.use("/raffleskidz/centres", centresController); // ALWAYS USE ROUTER ON "/CENTRES" ROUTE
 
+const employeesController = require("./controllers/employeesController.js"); //IMPORT ROUTER IN CONTROLLER FILE
+app.use("/raffleskidz/employees", employeesController); // ALWAYS USE ROUTER ON "/EMPLOYEES" ROUTE
+
 const dashboardController = require("./controllers/dashboardController.js"); //IMPORT ROUTER IN CONTROLLER FILE
 app.use("/dashboard", dashboardController); // ALWAYS USE ROUTER ON "/DASHBOARD" ROUTE
 

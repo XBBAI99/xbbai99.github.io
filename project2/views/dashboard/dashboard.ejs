@@ -8,26 +8,26 @@
       Welcome to your EDOOVO Account, <%=currentUser.username%>!
     </h6>
     <div class="dashBoardContainer">
-      <div id="centreInfo" class="mdc-card demo-card">
+      <div class="dashBoardBox mdc-card demo-card">
         <div
           class="mdc-card__primary-action demo-card__primary-action"
           tabindex="0"
         >
           <div
-            class="mdc-card__media mdc-card__media--16-9 demo-card__media"
-            style='background-image: url("../images/raffleskidz.jpg");'
+            class="mdc-card__media mdc-card__media--square demo-card__media"
+            style='background-image: url("/images/centreInfo.jpg");'
           ></div>
           <div class="demo-card__primary">
-            <h6
+            <p
               class="demo-card__title mdc-typography mdc-typography--headline6"
             >
-              Centre Info
-            </h6>
+              Centre
+            </p>
           </div>
           <div
             class="demo-card__secondary mdc-typography mdc-typography--body2"
           >
-            See centre list and select any centre for more detailed information.
+            View, edit, add and delete centre info
           </div>
         </div>
         <div class="mdc-card__actions">
@@ -35,6 +35,40 @@
             <button
               class="mdc-button mdc-card__action mdc-card__action--button"
               onclick="location.href='raffleskidz/centres'"
+            >
+              <span class="mdc-button__ripple"></span> View
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashBoardBox mdc-card demo-card">
+        <div
+          class="mdc-card__primary-action demo-card__primary-action"
+          tabindex="0"
+        >
+          <div
+            class="mdc-card__media mdc-card__media--square demo-card__media"
+            style='background-image: url("/images/staffInfo.jpg");'
+          ></div>
+          <div class="demo-card__primary">
+            <p
+              class="demo-card__title mdc-typography mdc-typography--headline6"
+            >
+              Staff
+            </p>
+          </div>
+          <div
+            class="demo-card__secondary mdc-typography mdc-typography--body1"
+          >
+            View, edit, add and delete staff info
+          </div>
+        </div>
+        <div class="mdc-card__actions">
+          <div class="mdc-card__action-buttons">
+            <button
+              class="mdc-button mdc-card__action mdc-card__action--button"
+              onclick="location.href='raffleskidz/employees'"
             >
               <span class="mdc-button__ripple"></span> View
             </button>

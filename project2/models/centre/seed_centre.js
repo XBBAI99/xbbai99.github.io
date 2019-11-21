@@ -5,7 +5,8 @@ const newCentres = [
     description: "Our first centre.",
     img: "/images/centres/centreProfile_RKYCK.jpg",
     fee: 1280,
-    capacity: 99
+    capacity: 99,
+    employees: ["5dd530aa47dbd34d005b4a25", "5dd530aa47dbd34d005b4a26"]
   },
   {
     name: "Raffles Kidz @ Bukit Panjang",
@@ -13,7 +14,8 @@ const newCentres = [
     description: "Our second centre.",
     img: "/images/centres/centreProfile_RKBP.jpg",
     fee: 1200,
-    capacity: 107
+    capacity: 107,
+    employees: ["5dd530aa47dbd34d005b4a27", "5dd530aa47dbd34d005b4a28"]
   },
   {
     name: "Raffles Kidz @ Punggol",
@@ -21,7 +23,8 @@ const newCentres = [
     description: "our third centre.",
     img: "/images/centres/centreProfile_RKPG.jpg",
     fee: 1280,
-    capacity: 145
+    capacity: 145,
+    employees: ["5dd530aa47dbd34d005b4a29", "5dd530aa47dbd34d005b4a2a"]
   },
   {
     name: "Raffles Kidz @ Jurong West",
@@ -29,7 +32,8 @@ const newCentres = [
     description: "Our fourth centre.",
     img: "/images/centres/centreProfile_RKJW.jpg",
     fee: 1280,
-    capacity: 280
+    capacity: 280,
+    employees: ["5dd530aa47dbd34d005b4a2b", "5dd530aa47dbd34d005b4a2c"]
   }
 ];
 

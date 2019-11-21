@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Centre Edit</title>
+    <title>Employee Edit</title>
     <% include ../partials/head.ejs %>
   </head>
   <body>
@@ -16,18 +16,18 @@
 
     <img src="/images/raffleskidz.jpg" id="brandLogoImage" alt="Image" />
 
-    <div class="centreEditContainer">
+    <div class="employeeEditContainer">
       <div class="mdc-card demo-card">
         <div
           class="mdc-card__primary-action demo-card__primary-action"
           tabindex="0"
         >
           <div
-            class="mdc-card__media mdc-card__media--16-9 demo-card__media"
-            style='background-image: url("<%= centre.img %>");'
+            class="mdc-card__media mdc-card__media--square demo-card__media"
+            style='background-image: url("<%= employee.img %>");'
           ></div>
           <form
-            action="/raffleskidz/centres/<%= centre.id %>?_method=PUT"
+            action="/raffleskidz/employees/<%= employee.id %>?_method=PUT"
             method="POST"
           >
             <table align="center">
@@ -35,13 +35,13 @@
               <tr>
                 <td><label> Name </label></td>
                 <td>
-                  <div class="mdc-text-field">
+                  <div class="mdc-text-field text-field-width">
                     <input
                       type="text"
                       class="mdc-text-field__input"
                       id="name"
                       name="name"
-                      value="<%= centre.name %>"
+                      value="<%= employee.name %>"
                     />
                     <div class="mdc-line-ripple"></div>
                     <label for="name" class="mdc-floating-label"></label>
@@ -49,66 +49,64 @@
                 </td>
               </tr>
               <tr>
-                <td><label> Address </label></td>
+                <td><label> Centre </label></td>
                 <td>
-                  <div class="mdc-text-field">
-                    <input
+                  <div class="mdc-text-field text-field-width">
+                    <select
                       type="text"
                       class="mdc-text-field__input"
-                      id="address"
-                      name="address"
-                      value="<%= centre.address %>"
-                    />
+                      id="centre"
+                      name="centre"
+                      value="<%= employee.centre %>"
+                    >
+                      <option value="5dd532e78ebea54d004f7975"
+                        >Raffles Kidz @ Yio Chu Kang</option
+                      >
+                      <option value="5dd532e78ebea54d004f7976"
+                        >Raffles Kidz @ Bukit Panjang</option
+                      >
+                      <option value="5dd532e78ebea54d004f7977"
+                        >Raffles Kidz @ Punggol</option
+                      >
+                      <option value="5dd532e78ebea54d004f7978"
+                        >Raffles Kidz @ Jurong West</option
+                      >
+                    </select>
                     <div class="mdc-line-ripple"></div>
-                    <label for="address" class="mdc-floating-label"></label>
+                    <label for="centre" class="mdc-floating-label"></label>
                   </div>
                 </td>
               </tr>
               <tr>
-                <td><label> Description </label></td>
+                <td><label> Title </label></td>
                 <td>
-                  <div class="mdc-text-field">
+                  <div class="mdc-text-field text-field-width">
                     <input
                       type="text"
                       class="mdc-text-field__input"
-                      id="description"
-                      name="description"
-                      value="<%= centre.description %>"
+                      id="title"
+                      name="title"
+                      value="<%= employee.title %>"
                     />
                     <div class="mdc-line-ripple"></div>
-                    <label for="description" class="mdc-floating-label"></label>
+                    <label for="title" class="mdc-floating-label"></label>
                   </div>
                 </td>
               </tr>
               <tr>
-                <td><label> School Fee </label></td>
+                <td><label> Year of Joining </label></td>
                 <td>
-                  <div class="mdc-text-field">
+                  <div class="mdc-text-field text-field-width">
                     <input
                       type="text"
                       class="mdc-text-field__input"
-                      id="fee"
-                      name="fee"
-                      value="<%= centre.fee %>"
+                      id="joinYear"
+                      name="joinYear"
+                      value="<%= employee.joinYear
+                    %>"
                     />
                     <div class="mdc-line-ripple"></div>
-                    <label for="fee" class="mdc-floating-label"></label>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td><label> Capacity </label></td>
-                <td>
-                  <div class="mdc-text-field">
-                    <input
-                      type="text"
-                      class="mdc-text-field__input"
-                      id="capacity"
-                      name="capacity"
-                      value="<%= centre.capacity %>"
-                    />
-                    <div class="mdc-line-ripple"></div>
-                    <label for="capacity" class="mdc-floating-label"></label>
+                    <label for="joinYear" class="mdc-floating-label"></label>
                   </div>
                 </td>
               </tr>
@@ -125,7 +123,7 @@
                   </button>
                   <button
                     class="mdc-button mdc-button--outlined"
-                    onclick="location.href='/raffleskidz/centres/<%= centre.id %>'"
+                    onclick="location.href='/raffleskidz/employees'"
                   >
                     <span class="mdc-button__ripple"></span> Cancel
                   </button>

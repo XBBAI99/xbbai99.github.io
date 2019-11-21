@@ -10,7 +10,8 @@ const centreSchema = new Schema(
     description: String,
     img: String,
     fee: { type: Number, required: true, min: 0 },
-    capacity: { type: Number, required: true, min: 0 }
+    capacity: { type: Number, required: true, min: 0 },
+    employees: [{ type: Schema.Types.ObjectId, ref: "Employee" }]
   },
   { timestamps: true }
 );
