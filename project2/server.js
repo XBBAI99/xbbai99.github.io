@@ -12,6 +12,7 @@ const methodOverride = require("method-override"); // MIDDLEWARE FOR FORM TO PER
 app.use(methodOverride("_method")); // LOOK FOR "_METHOD" AND OVERRIDE
 
 app.use(express.urlencoded({ extended: false })); // USE BODY PARSER TO PERFORM POST AND PUT FUNCTION
+app.use(express.json({ extended: false })); // USE BODY PARSER TO PERFORM POST AND PUT FUNCTION
 app.use(express.static("public")); // USE STATIC CSS
 
 const session = require("express-session"); // USE SESSION
@@ -62,6 +63,9 @@ app.use("/users", usersController);
 
 const sessionsController = require("./controllers/sessionsController.js");
 app.use("/sessions", sessionsController);
+
+const geoController = require("./controllers/geoController.js");
+app.use("/geocode", geoController);
 
 // PORT LISTENER
 app.listen(port, () => {

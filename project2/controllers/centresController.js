@@ -68,7 +68,7 @@ centres.put("/:id", (req, res) => {
     req.body,
     { new: true },
     (err, data) => {
-      res.redirect("/raffleskidz/centres");
+      res.redirect("/raffleskidz/centres/" + req.params.id);
     }
   );
 });

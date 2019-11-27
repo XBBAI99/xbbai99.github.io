@@ -6,6 +6,9 @@ const employees = express.Router();
 const Employee = require("../models/employee/employee");
 const newEmployees = require("../models/employee/seed_employee");
 
+// LINK WITH CENTRE MODEL
+const Centre = require("../models/centre/centre");
+
 // SEED DATA
 employees.get("/seed", (req, res) => {
   Employee.insertMany(newEmployees, (error, employees) => {
@@ -35,7 +38,16 @@ employees.get("/", (req, res) => {
 
 // 2. NEW EMPLOYEE PAGE
 employees.get("/new", (req, res) => {
-  res.render("employees/new.ejs");
+  Employee.find({})
+    .populate("centre")
+    .exec((error, foundEmployees) => {
+      Centre.find({}, (err, foundCentres) => {
+        res.render("employees/new.ejs", {
+          employees: foundEmployees,
+          centres: foundCentres
+        });
+      });
+    });
 });
 
 // 3. SHOW PAGE
@@ -61,8 +73,11 @@ employees.get("/:id/edit", (req, res) => {
   Employee.findById(req.params.id)
     .populate("centre")
     .exec((err, foundEmployee) => {
-      res.render("employees/edit.ejs", {
-        employee: foundEmployee
+      Centre.find({}, (err, foundCentres) => {
+        res.render("employees/edit.ejs", {
+          employee: foundEmployee,
+          centres: foundCentres
+        });
       });
     });
 });
@@ -74,7 +89,7 @@ employees.put("/:id", (req, res) => {
     req.body,
     { new: true },
     (err, data) => {
-      res.redirect("/raffleskidz/employees");
+      res.redirect("/raffleskidz/employees/" + req.params.id);
     }
   );
 });

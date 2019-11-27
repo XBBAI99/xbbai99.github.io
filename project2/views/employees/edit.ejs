@@ -57,20 +57,11 @@
                       class="mdc-text-field__input"
                       id="centre"
                       name="centre"
-                      value="<%= employee.centre %>"
-                    >
-                      <option value="5dd532e78ebea54d004f7975"
-                        >Raffles Kidz @ Yio Chu Kang</option
-                      >
-                      <option value="5dd532e78ebea54d004f7976"
-                        >Raffles Kidz @ Bukit Panjang</option
-                      >
-                      <option value="5dd532e78ebea54d004f7977"
-                        >Raffles Kidz @ Punggol</option
-                      >
-                      <option value="5dd532e78ebea54d004f7978"
-                        >Raffles Kidz @ Jurong West</option
-                      >
+                      value="<%= employee.centre %>">
+                    <% for(let i = 0; i < centres.length; i++) { %>
+                      <option value= <%= centres[i].id %>
+                        ><%= centres[i].name %></option>
+                    <% } %>
                     </select>
                     <div class="mdc-line-ripple"></div>
                     <label for="centre" class="mdc-floating-label"></label>
@@ -122,10 +113,11 @@
                     <span class="mdc-button__label">Submit</span>
                   </button>
                   <button
+                    type="button"
                     class="mdc-button mdc-button--outlined"
-                    onclick="location.href='/raffleskidz/employees'"
+                    onclick="location.href='/raffleskidz/employees/<%= employee.id %>'"
                   >
-                    <span class="mdc-button__ripple"></span> Cancel
+                    <span class="mdc-button__ripple"></span>Cancel
                   </button>
                   <P></P>
                 </td>

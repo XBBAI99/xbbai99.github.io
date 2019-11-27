@@ -72,11 +72,7 @@
                 </div>
               </td>
               <td class="mdc-data-table__cell">
-                <a
-                  class="linkName"
-                  href="/raffleskidz/employees/<%= centre.employees[i].id %>"
-                  ><%= centre.employees[i].name %></a
-                >
+                <%= centre.employees[i].name %>
               </td>
               <td class="mdc-data-table__cell">
                 <%= centre.name %>
@@ -96,10 +92,10 @@
     <P></P>
     <button
       class="mdc-button mdc-button--raised"
-      onclick="location.href='/raffleskidz/centres/<% centre.id %>'"
+      onclick="location.href='/raffleskidz/centres/'"
     >
       <div class="mdc-button__ripple"></div>
-      <span class="mdc-button__label">Back to centre</span>
+      <span class="mdc-button__label">Back to centres</span>
     </button>
   </body>
 </html>

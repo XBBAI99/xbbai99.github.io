@@ -10,12 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
+    "confirm-dialog": "^0.1.2",
     "dotenv": "^8.2.0",
     "ejs": "^2.7.2",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "material-components-web": "^4.0.0",
     "method-override": "^3.0.0",
-    "mongoose": "^5.7.11"
+    "mongoose": "^5.4.8",
+    "request": "^2.88.0"
   }
 }

@@ -346,14 +346,11 @@ $(() => {
       // https://developers.google.com/maps/documentation/geocoding/start
       // https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/map-latlng-literal
       $.ajax({
-        url:
-          "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyD9jp8Lt4dja80ZDfdtXzcGMCs5hOfmuVE&callback=initMap",
-        data: { address: targetCentre.centre_address }, //source is the targetCentre address
+        url: "http://localhost:3000/geocode", //call local host API for geocode
+        data: { address: targetCentre.centre_address }, //put targetCentre address into request
         success: function(data) {
-          let geo = data;
-          targetCentre.geo_location = geo.results[0].geometry.location;
-          console.log(geo);
-          console.log(targetCentre.geo_location);
+          let geo = data; //put data sent from server into a variable
+          targetCentre.geo_location = geo.results[0].geometry.location; //put geocode from server into a variable
 
           let map = new google.maps.Map(document.getElementById("map"), {
             center: targetCentre.geo_location,
