@@ -346,7 +346,7 @@ $(() => {
       // https://developers.google.com/maps/documentation/geocoding/start
       // https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/map-latlng-literal
       $.ajax({
-        url: "http://localhost:3000/geocode", //call local host API for geocode
+        url: "/geocode", //call local host API for geocode
         data: { address: targetCentre.centre_address }, //put targetCentre address into request
         success: function(data) {
           let geo = data; //put data sent from server into a variable
